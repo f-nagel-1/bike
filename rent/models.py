@@ -6,7 +6,7 @@ class Customer(models.Model):
     first_name = models.CharField(max_length=60)
     last_name = models.CharField(max_length=60)
     email = models.EmailField(max_length=60)
-    phone_number = models.IntegerField()
+    #phone_number = models.IntegerField()
     address = models.CharField(max_length=70) 
     city = models.CharField(max_length=60)
     country = models.CharField(max_length=60)
@@ -29,7 +29,7 @@ class Rental(models.Model):
     customer = models.ForeignKey(Customer, on_delete=models.CASCADE)    #(FK to Customer)
     vehicle = models.ForeignKey(Vehicle, on_delete=models.CASCADE)      #(FK to Vehicle)
 
-class RentalRate (models.Model):
+class RentalRate(models.Model):
     daily_rate = models.IntegerField() 
     vehicle_type = models.ForeignKey(VehicleType, on_delete=models.CASCADE) #(FK to Vehicle Type)
     vehicle_size = models.ForeignKey(VehicleSize, on_delete=models.CASCADE) #(FK to Vehicle Size)

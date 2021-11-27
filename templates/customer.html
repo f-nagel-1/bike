@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+
+    <body>
+
+        <h1>Customers Vehicles</h1>
+       
+
+       
+       <table class="table table-bordered" style='width:75%'>
+        <tr>
+            <th>Customer ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email ID</th>
+            <th>Address</th>
+          </tr>
+        {% for customer in customers %}
+        
+        <tr>
+          <td>{{customer.id}} </td>  <!-- add anchor tag. -->
+          <td>{{customer.first_name}}</td>
+          <td>{{customer.last_name}}</td>
+          <td>{{customer.email}}</td>
+          <td>{{customer.address}}</td>
+        </tr>
+        {% endfor %}
+    
+      </table>

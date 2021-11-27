@@ -15,9 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from rent import views
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('rent/', include('rent.urls'))
+    path('rent/', include('rent.urls')),
+    #path('add_customers/', views.add_customers, name = 'add_customers')
 ]
